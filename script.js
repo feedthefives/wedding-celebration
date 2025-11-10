@@ -1,4 +1,3 @@
-// ===== Splash Screen Transition =====
 window.addEventListener("load", () => {
   const splash = document.getElementById("splash");
   const main = document.getElementById("mainContent");
