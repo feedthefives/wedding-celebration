@@ -7,81 +7,108 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>💍 Wedding Celebration</h1>
-    <p class="subtext">Join us as we celebrate a special union filled with love and joy!</p>
-  </header>
 
-  <form id="rsvpForm">
-    <label for="name">Full Name</label>
-    <input type="text" id="name" name="name" placeholder="Your full name" required>
-
-    <label for="email">Email Address</label>
-    <input type="email" id="email" name="email" placeholder="you@example.com" required>
-
-    <label for="attendance">Will you attend?</label>
-    <select id="attendance" name="attendance" required>
-      <option value="">-- Please select --</option>
-      <option value="yes">Yes, I’ll be there</option>
-      <option value="no">Sorry, can’t make it</option>
-      <option value="maybe">Maybe</option>
-    </select>
-
-    <label for="partner">Will you attend with a partner?</label>
-    <select id="partner" name="partner" required>
-      <option value="">-- Select --</option>
-      <option value="single">Single</option>
-      <option value="with-partner">With Partner</option>
-    </select>
-
-    <div id="partnerDetails" class="hidden">
-      <label for="partnerName">Partner’s Full Name</label>
-      <input type="text" id="partnerName" name="partnerName" placeholder="Partner’s name">
+  <!-- 🌸 SAVE THE DATE SPLASH -->
+  <div id="splash">
+    <div class="splash-content">
+      <h2>💍 Save the Date</h2>
+      <p class="names">Thabo ❤️ Lerato</p>
+      <p class="date">Saturday, 14 February 2026</p>
+      <p class="venue">Bloemfontein, South Africa</p>
     </div>
-
-    <label for="meal">Meal Preference</label>
-    <select id="meal" name="meal">
-      <option value="">-- Select a meal --</option>
-      <option value="beef">Beef</option>
-      <option value="chicken">Chicken</option>
-      <option value="vegetarian">Vegetarian</option>
-      <option value="other">Other</option>
-    </select>
-
-    <label for="message">Message for the Couple 💌</label>
-    <textarea id="message" name="message" rows="4" placeholder="Your wishes or blessings"></textarea>
-
-    <button type="submit">Send RSVP</button>
-  </form>
-
-  <footer>
-    <p>With love ❤️ Mr & Mrs Gaarekoe</p>
-  </footer>
-
-  <!-- Background Music Player -->
-  <audio id="weddingMusic" src="music.mp3" loop autoplay muted></audio>
-
-  <div class="music-control">
-    <button id="toggleMusic" aria-label="Toggle background music">
-      🎵 Play Music
-    </button>
   </div>
 
-  <!-- Floating Hearts -->
-  <div class="heart" style="--x:0.1;">💖</div>
-  <div class="heart" style="--x:0.3;">💞</div>
-  <div class="heart" style="--x:0.5;">💗</div>
-  <div class="heart" style="--x:0.7;">💘</div>
-  <div class="heart" style="--x:0.9;">💝</div>
+  <!-- 🌷 MAIN CONTENT -->
+  <div id="mainContent" class="hidden">
+    <header>
+      <h1>💍 Wedding Celebration</h1>
+      <p class="subtext">Join us as we celebrate a special union filled with love and joy!</p>
+    </header>
 
-  <!-- Floating Sparkles -->
-  <div class="sparkle" style="--x:0.15; --d:0s;"></div>
-  <div class="sparkle" style="--x:0.35; --d:2s;"></div>
-  <div class="sparkle" style="--x:0.55; --d:4s;"></div>
-  <div class="sparkle" style="--x:0.75; --d:6s;"></div>
-  <div class="sparkle" style="--x:0.9; --d:8s;"></div>
+    <form id="rsvpForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+      <label for="attendance">Will you attend?</label>
+      <select id="attendance" name="attendance" required>
+        <option value="">-- Please select --</option>
+        <option value="yes">Yes, I’ll be there</option>
+        <option value="no">Sorry, can’t make it</option>
+        <option value="maybe">Maybe</option>
+      </select>
+
+      <label for="partner">Will you attend with a partner?</label>
+      <select id="partner" name="partner" required>
+        <option value="">-- Select --</option>
+        <option value="single">Single</option>
+        <option value="with-partner">With Partner</option>
+      </select>
+
+      <div id="partnerDetails" class="hidden">
+        <label for="partnerName">Partner’s Full Name</label>
+        <input type="text" id="partnerName" name="partnerName" placeholder="Partner’s name">
+      </div>
+
+      <label for="meal">Meal Preference</label>
+      <select id="meal" name="meal">
+        <option value="">-- Select a meal --</option>
+        <option value="beef">Beef</option>
+        <option value="chicken">Chicken</option>
+        <option value="vegetarian">Vegetarian</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="message">Message for the Couple 💌</label>
+      <textarea id="message" name="message" rows="4" placeholder="Your wishes or blessings"></textarea>
+
+      <button type="submit">Send RSVP</button>
+    </form>
+
+    <footer>
+      <p>With love ❤️ Mr & Mrs Gaarekoe</p>
+    </footer>
+
+    <!-- Background Music Player -->
+    <audio id="weddingMusic" src="music.mp3" loop autoplay muted></audio>
+
+    <div class="music-control">
+      <button id="toggleMusic" aria-label="Toggle background music">
+        🎵 Play Music
+      </button>
+    </div>
+
+    <!-- Floating Hearts -->
+    <div class="heart" style="--x:0.1;">💖</div>
+    <div class="heart" style="--x:0.3;">💞</div>
+    <div class="heart" style="--x:0.5;">💗</div>
+    <div class="heart" style="--x:0.7;">💘</div>
+    <div class="heart" style="--x:0.9;">💝</div>
+
+    <!-- Floating Sparkles -->
+    <div class="sparkle" style="--x:0.15; --d:0s;"></div>
+    <div class="sparkle" style="--x:0.35; --d:2s;"></div>
+    <div class="sparkle" style="--x:0.55; --d:4s;"></div>
+    <div class="sparkle" style="--x:0.75; --d:6s;"></div>
+    <div class="sparkle" style="--x:0.9; --d:8s;"></div>
+  </div>
 
   <script>
+    // Splash screen fade transition
+    window.addEventListener("load", () => {
+      const splash = document.getElementById("splash");
+      const main = document.getElementById("mainContent");
+      setTimeout(() => {
+        splash.classList.add("fade-out");
+        setTimeout(() => {
+          splash.style.display = "none";
+          main.classList.remove("hidden");
+        }, 1000);
+      }, 3500);
+    });
+
     // Partner name toggle
     document.getElementById("partner").addEventListener("change", function() {
       const partnerDetails = document.getElementById("partnerDetails");
