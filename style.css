@@ -76,8 +76,8 @@ header {
 
 /* ✅ Smaller, glowing, emoji-sized image */
 .wedding-icon {
-  width: 24px;
-  height: 24px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   object-fit: cover;
   vertical-align: middle;
