@@ -12,7 +12,7 @@
   <div id="splash">
     <div class="splash-content">
       <h2>💍 Save the Date</h2>
-      <p class="names">Kagisho ❤️ Lady</p>
+      <p class="names">Thabo ❤️ Lerato</p>
       <p class="date">Saturday, 14 February 2026</p>
       <p class="venue">Bloemfontein, South Africa</p>
     </div>
@@ -95,8 +95,18 @@
     <div class="sparkle" style="--x:0.9; --d:8s;"></div>
   </div>
 
+  <!-- 💖 RSVP CONFIRMATION POPUP -->
+  <div id="popup" class="hidden">
+    <div class="popup-content">
+      <div class="heart-icon">💗</div>
+      <h3>RSVP Confirmed!</h3>
+      <p>Thank you for celebrating this special day with us.</p>
+      <button id="closePopup">OK</button>
+    </div>
+  </div>
+
   <script>
-    // Splash screen fade transition
+    // Splash screen transition
     window.addEventListener("load", () => {
       const splash = document.getElementById("splash");
       const main = document.getElementById("mainContent");
@@ -109,18 +119,25 @@
       }, 3500);
     });
 
-    // Partner name toggle
+    // Partner field toggle
     document.getElementById("partner").addEventListener("change", function() {
       const partnerDetails = document.getElementById("partnerDetails");
       partnerDetails.classList.toggle("hidden", this.value !== "with-partner");
     });
 
-    // Form submission alert
+    // RSVP popup
+    const popup = document.getElementById("popup");
+    const closePopup = document.getElementById("closePopup");
     document.getElementById("rsvpForm").addEventListener("submit", function(e) {
       e.preventDefault();
-      alert("Thank you for registering for our Wedding Celebration! 💖");
+      popup.classList.remove("hidden");
+      popup.classList.add("show");
       this.reset();
       document.getElementById("partnerDetails").classList.add("hidden");
+    });
+    closePopup.addEventListener("click", () => {
+      popup.classList.remove("show");
+      setTimeout(() => popup.classList.add("hidden"), 500);
     });
 
     // Music control
