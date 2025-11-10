@@ -1,12 +1,13 @@
+// ===== Splash Screen Transition =====
 window.addEventListener("load", () => {
   const splash = document.getElementById("splash");
   const main = document.getElementById("mainContent");
 
-  // Wait 3.5 seconds, fade out splash, then remove it completely
   setTimeout(() => {
     splash.classList.add("fade-out");
     setTimeout(() => {
-      splash.style.display = "none"; // ✅ ensures splash no longer blocks clicks
+      splash.style.pointerEvents = "none"; // ✅ fully disables blocking
+      splash.style.display = "none";       // ✅ hides it entirely
       main.classList.remove("hidden");
     }, 1000);
   }, 3500);
@@ -24,21 +25,13 @@ const closePopup = document.getElementById("closePopup");
 
 document.getElementById("rsvpForm").addEventListener("submit", function (e) {
   e.preventDefault();
-
-  // Show popup instead of default alert
-  popup.classList.remove("hidden");
   popup.classList.add("show");
-
   this.reset();
   document.getElementById("partnerDetails").classList.add("hidden");
 });
 
 closePopup.addEventListener("click", () => {
   popup.classList.remove("show");
-  setTimeout(() => {
-    popup.classList.add("hidden");
-    popup.style.display = "none"; // ✅ completely removes popup from click layer
-  }, 500);
 });
 
 // ===== Music Toggle =====
