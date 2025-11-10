@@ -1,29 +1,51 @@
 body {
   font-family: "Poppins", sans-serif;
-  background: #fffafc;
+  background: url("background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
   color: #333;
   margin: 0;
   padding: 0;
   text-align: center;
+  backdrop-filter: brightness(0.9);
+}
+
+/* Overlay to ensure readability */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: -1;
 }
 
 header {
-  background: linear-gradient(120deg, #ffb6c1, #ffe4e1);
+  background: rgba(255, 255, 255, 0.85);
   color: #333;
   padding: 30px 10px;
+  border-radius: 10px;
+  width: fit-content;
+  margin: 30px auto 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .subtext {
   font-style: italic;
+  font-size: 1.05em;
+  color: #555;
 }
 
 form {
   max-width: 480px;
   margin: 30px auto;
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
   padding: 25px;
   border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(6px);
 }
 
 label {
@@ -31,6 +53,7 @@ label {
   text-align: left;
   margin-top: 15px;
   font-weight: 600;
+  color: #444;
 }
 
 input, select, textarea {
@@ -40,6 +63,7 @@ input, select, textarea {
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 1em;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
 }
 
 button {
@@ -52,17 +76,23 @@ button {
   margin-top: 20px;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s;
 }
 
 button:hover {
   background-color: #ffa0af;
+  transform: scale(1.05);
 }
 
 footer {
   margin-top: 40px;
   font-size: 0.9em;
-  color: #666;
+  color: #444;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
 
 .hidden {
