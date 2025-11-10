@@ -170,7 +170,7 @@ footer {
   font-size: 22px;
   color: #ffb6c1;
   opacity: 0.8;
-  animation: floatHearts 10s linear infinite;
+  animation: floatHearts 15s linear infinite;
   animation-delay: calc(-10s * var(--x));
   z-index: 0;
 }
@@ -184,7 +184,7 @@ footer {
   background: radial-gradient(circle, #ffe4ec 0%, #ffb6c1 40%, transparent 100%);
   border-radius: 50%;
   opacity: 0;
-  animation: sparkleUp 10s linear infinite;
+  animation: sparkleUp 15s linear infinite;
   animation-delay: var(--d);
   z-index: 0;
   pointer-events: none;
