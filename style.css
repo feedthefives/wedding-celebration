@@ -68,32 +68,36 @@ header {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 18px;
+  gap: 10px;
   flex-wrap: wrap;
   text-align: center;
   animation: fadeInUp 2s ease;
 }
 
+/* ✅ Smaller, glowing, emoji-sized image */
 .wedding-icon {
-  width: 85px;
-  height: 85px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 0 18px rgba(0, 184, 107, 0.5);
+  vertical-align: middle;
+  display: inline-block;
+  box-shadow: 0 0 6px rgba(0, 184, 107, 0.6);
   animation: softGlow 3s ease-in-out infinite alternate;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-right: 6px;
 }
 
 .wedding-icon:hover {
-  transform: scale(1.07);
-  box-shadow: 0 0 28px rgba(0, 184, 107, 0.8);
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 184, 107, 0.8);
 }
 
-/* Glow effect animation */
+/* Glow animation */
 @keyframes softGlow {
-  0% { filter: brightness(1); box-shadow: 0 0 10px rgba(0,184,107,0.3); }
-  50% { filter: brightness(1.25); box-shadow: 0 0 25px rgba(0,184,107,0.6); }
-  100% { filter: brightness(1); box-shadow: 0 0 10px rgba(0,184,107,0.3); }
+  0% { filter: brightness(1); box-shadow: 0 0 4px rgba(0,184,107,0.3); }
+  50% { filter: brightness(1.25); box-shadow: 0 0 10px rgba(0,184,107,0.6); }
+  100% { filter: brightness(1); box-shadow: 0 0 4px rgba(0,184,107,0.3); }
 }
 
 header h1 {
@@ -116,8 +120,9 @@ header h1 {
 /* Responsive header */
 @media (max-width: 600px) {
   .wedding-icon {
-    width: 70px;
-    height: 70px;
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
   }
   header h1 {
     font-size: 1.6em;
