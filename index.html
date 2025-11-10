@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wedding Celebration RSVP</title>
+  <title>Kagisho & Pulane’s Wedding Celebration</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,7 +12,7 @@
   <div id="splash">
     <div class="splash-content">
       <h2>💍 Save the Date</h2>
-      <p class="names">Thabo ❤️ Lerato</p>
+      <p class="names">Kagisho 💚 Pulane</p>
       <p class="date">Saturday, 14 February 2026</p>
       <p class="venue">Bloemfontein, South Africa</p>
     </div>
@@ -21,24 +21,13 @@
   <!-- 🌷 MAIN CONTENT -->
   <div id="mainContent" class="hidden">
     <header>
-      <h1>💍 Wedding Celebration</h1>
-      <p class="subtext">Join us as we celebrate a special union filled with love and joy!</p>
+      <h1>💚 Kagisho & Pulane’s Wedding Celebration</h1>
+      <p class="subtext">Join us as we celebrate a beautiful union filled with joy, laughter, and everlasting love.</p>
     </header>
 
     <form id="rsvpForm">
       <label for="name">Full Name</label>
       <input type="text" id="name" name="name" placeholder="Your full name" required>
-
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" placeholder="you@example.com" required>
-
-      <label for="attendance">Will you attend?</label>
-      <select id="attendance" name="attendance" required>
-        <option value="">-- Please select --</option>
-        <option value="yes">Yes, I’ll be there</option>
-        <option value="no">Sorry, can’t make it</option>
-        <option value="maybe">Maybe</option>
-      </select>
 
       <label for="partner">Will you attend with a partner?</label>
       <select id="partner" name="partner" required>
@@ -52,23 +41,18 @@
         <input type="text" id="partnerName" name="partnerName" placeholder="Partner’s name">
       </div>
 
-      <label for="meal">Meal Preference</label>
-      <select id="meal" name="meal">
-        <option value="">-- Select a meal --</option>
-        <option value="beef">Beef</option>
-        <option value="chicken">Chicken</option>
-        <option value="vegetarian">Vegetarian</option>
-        <option value="other">Other</option>
-      </select>
-
       <label for="message">Message for the Couple 💌</label>
       <textarea id="message" name="message" rows="4" placeholder="Your wishes or blessings"></textarea>
 
       <button type="submit">Send RSVP</button>
+      <p class="closing-line">With love ❤️ Mr & Mrs Gaarekoe</p>
     </form>
 
+    <!-- 💌 Footer with contact info -->
     <footer>
-      <p>With love ❤️ Mr & Mrs Gaarekoe</p>
+      <p>📧 Email: <a href="mailto:kagishopulane.wedding@gmail.com">kagishopulane.wedding@gmail.com</a></p>
+      <p>📞 Contact: +27 71 234 5678</p>
+      <p>Bloemfontein, South Africa</p>
     </footer>
 
     <!-- Background Music Player -->
@@ -81,11 +65,11 @@
     </div>
 
     <!-- Floating Hearts -->
-    <div class="heart" style="--x:0.1;">💖</div>
+    <div class="heart" style="--x:0.1;">💚</div>
     <div class="heart" style="--x:0.3;">💞</div>
-    <div class="heart" style="--x:0.5;">💗</div>
-    <div class="heart" style="--x:0.7;">💘</div>
-    <div class="heart" style="--x:0.9;">💝</div>
+    <div class="heart" style="--x:0.5;">💚</div>
+    <div class="heart" style="--x:0.7;">💞</div>
+    <div class="heart" style="--x:0.9;">💚</div>
 
     <!-- Floating Sparkles -->
     <div class="sparkle" style="--x:0.15; --d:0s;"></div>
@@ -98,7 +82,7 @@
   <!-- 💖 RSVP CONFIRMATION POPUP -->
   <div id="popup" class="hidden">
     <div class="popup-content">
-      <div class="heart-icon">💗</div>
+      <div class="heart-icon">💚</div>
       <h3>RSVP Confirmed!</h3>
       <p>Thank you for celebrating this special day with us.</p>
       <button id="closePopup">OK</button>
