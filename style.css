@@ -42,12 +42,15 @@ header {
   animation: slideDown 1.5s ease;
 }
 header h1 {
-  background: linear-gradient(90deg, #ffb6c1, #ffc8dd, #ffb6c1);
+  background: linear-gradient(90deg, #d4af37, #f7e199, #d4af37);
   background-size: 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shimmer 6s infinite linear;
+  font-weight: 700;
+  font-size: 2em;
 }
+
 .subtext { font-style: italic; color: #555; }
 
 form {
