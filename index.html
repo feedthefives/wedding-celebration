@@ -58,7 +58,7 @@
     <p>With love ❤️ Mr & Mrs Gaarekoe</p>
   </footer>
 
-  <!-- 🎵 Background Music Player -->
+  <!-- Background Music Player -->
   <audio id="weddingMusic" src="music.mp3" loop autoplay muted></audio>
 
   <div class="music-control">
@@ -67,13 +67,38 @@
     </button>
   </div>
 
-  <script src="script.js"></script>
+  <!-- Floating Hearts -->
+  <div class="heart" style="--x:0.1;">💖</div>
+  <div class="heart" style="--x:0.3;">💞</div>
+  <div class="heart" style="--x:0.5;">💗</div>
+  <div class="heart" style="--x:0.7;">💘</div>
+  <div class="heart" style="--x:0.9;">💝</div>
 
-  <!-- Music Toggle Script -->
+  <!-- Floating Sparkles -->
+  <div class="sparkle" style="--x:0.15; --d:0s;"></div>
+  <div class="sparkle" style="--x:0.35; --d:2s;"></div>
+  <div class="sparkle" style="--x:0.55; --d:4s;"></div>
+  <div class="sparkle" style="--x:0.75; --d:6s;"></div>
+  <div class="sparkle" style="--x:0.9; --d:8s;"></div>
+
   <script>
+    // Partner name toggle
+    document.getElementById("partner").addEventListener("change", function() {
+      const partnerDetails = document.getElementById("partnerDetails");
+      partnerDetails.classList.toggle("hidden", this.value !== "with-partner");
+    });
+
+    // Form submission alert
+    document.getElementById("rsvpForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Thank you for registering for our Wedding Celebration! 💖");
+      this.reset();
+      document.getElementById("partnerDetails").classList.add("hidden");
+    });
+
+    // Music control
     const music = document.getElementById("weddingMusic");
     const toggle = document.getElementById("toggleMusic");
-
     toggle.addEventListener("click", () => {
       if (music.muted) {
         music.muted = false;
