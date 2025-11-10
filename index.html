@@ -58,6 +58,35 @@
     <p>With love ❤️ Mr & Mrs Gaarekoe</p>
   </footer>
 
+  <!-- 🎵 Background Music Player -->
+  <audio id="weddingMusic" src="music.mp3" loop autoplay muted></audio>
+
+  <div class="music-control">
+    <button id="toggleMusic" aria-label="Toggle background music">
+      🎵 Play Music
+    </button>
+  </div>
+
   <script src="script.js"></script>
+
+  <!-- Music Toggle Script -->
+  <script>
+    const music = document.getElementById("weddingMusic");
+    const toggle = document.getElementById("toggleMusic");
+
+    toggle.addEventListener("click", () => {
+      if (music.muted) {
+        music.muted = false;
+        music.play();
+        toggle.textContent = "⏸️ Pause Music";
+      } else if (music.paused) {
+        music.play();
+        toggle.textContent = "⏸️ Pause Music";
+      } else {
+        music.pause();
+        toggle.textContent = "🎵 Play Music";
+      }
+    });
+  </script>
 </body>
 </html>
