@@ -46,20 +46,56 @@ body {
 }
 #splash.fade-out {
   opacity: 0;
-  pointer-events: none; /* ✅ prevents blocking */
+  pointer-events: none; 
   transition: opacity 1s ease;
 }
 
-/* ===== HEADER & FORM ===== */
+/* ===== HEADER ===== */
 header {
   background: rgba(255, 255, 255, 0.88);
   padding: 30px;
   border-radius: 20px;
   margin: 40px auto;
   width: fit-content;
+  max-width: 95%;
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
   animation: slideDown 1.5s ease;
+  text-align: center;
 }
+
+/* ===== IMAGE + TITLE ===== */
+.header-title {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  text-align: center;
+  animation: fadeInUp 2s ease;
+}
+
+.wedding-icon {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 18px rgba(0, 184, 107, 0.5);
+  animation: softGlow 3s ease-in-out infinite alternate;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wedding-icon:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 28px rgba(0, 184, 107, 0.8);
+}
+
+/* Glow effect animation */
+@keyframes softGlow {
+  0% { filter: brightness(1); box-shadow: 0 0 10px rgba(0,184,107,0.3); }
+  50% { filter: brightness(1.25); box-shadow: 0 0 25px rgba(0,184,107,0.6); }
+  100% { filter: brightness(1); box-shadow: 0 0 10px rgba(0,184,107,0.3); }
+}
+
 header h1 {
   background: linear-gradient(90deg, #006b3c, #00b86b, #006b3c);
   background-size: 300%;
@@ -68,8 +104,29 @@ header h1 {
   animation: shimmer 6s infinite linear;
   font-weight: 700;
   font-size: 2em;
+  margin: 0;
 }
-.subtext { font-style: italic; color: #055a33; }
+
+.subtext {
+  font-style: italic;
+  color: #055a33;
+  margin-top: 10px;
+}
+
+/* Responsive header */
+@media (max-width: 600px) {
+  .wedding-icon {
+    width: 70px;
+    height: 70px;
+  }
+  header h1 {
+    font-size: 1.6em;
+  }
+  .header-title {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
 
 /* ===== FORM ===== */
 form {
