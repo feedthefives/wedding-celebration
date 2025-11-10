@@ -1,56 +1,105 @@
-/* ===== WEDDING CELEBRATION STYLES ===== */
-
+/* ===== GLOBAL STYLES ===== */
 body {
   font-family: "Poppins", sans-serif;
   background: url("background.jpg") no-repeat center center fixed;
   background-size: cover;
-  background-attachment: fixed;
   color: #333;
   margin: 0;
   padding: 0;
   text-align: center;
-  backdrop-filter: brightness(0.9);
-  animation: fadeIn 1.5s ease-in;
+  overflow-x: hidden;
 }
 
-/* Soft overlay for readability */
-body::before {
-  content: "";
+/* ===== SPLASH SCREEN ===== */
+#splash {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.7);
-  z-index: -1;
-  animation: fadeInOverlay 2s ease-in;
+  inset: 0;
+  background: radial-gradient(circle, #fff5f8 0%, #ffd6e0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  animation: fadeIn 1s ease;
+  z-index: 9999;
 }
 
-header {
-  background: rgba(255, 255, 255, 0.85);
+.splash-content {
+  text-align: center;
+  animation: fadeInUp 2s ease;
+}
+
+.splash-content h2 {
+  font-size: 2.2em;
+  color: #ff6f91;
+  margin: 0;
+  font-weight: 700;
+}
+
+.splash-content .names {
+  font-size: 1.8em;
   color: #333;
-  padding: 30px 10px;
-  border-radius: 10px;
+  margin: 10px 0;
+  font-weight: 600;
+}
+
+.splash-content .date,
+.splash-content .venue {
+  font-size: 1.1em;
+  color: #555;
+}
+
+#splash.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+/* ===== MAIN CONTENT ===== */
+#mainContent {
+  animation: fadeIn 2s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: rgba(255, 255, 255, 0.88);
+  color: #333;
+  padding: 30px 25px;
+  border-radius: 20px;
   width: fit-content;
-  margin: 30px auto 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin: 40px auto 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
   animation: slideDown 1.5s ease;
+}
+
+header h1 {
+  background: linear-gradient(90deg, #ffb6c1, #ffc8dd, #ffb6c1);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s infinite linear;
+  font-weight: 700;
+  font-size: 2em;
 }
 
 .subtext {
   font-style: italic;
-  font-size: 1.05em;
-  color: #555;
+  font-size: 1.1em;
+  color: #444;
 }
 
+/* ===== FORM ===== */
 form {
-  max-width: 480px;
-  margin: 30px auto;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(6px);
+  max-width: 520px;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  backdrop-filter: blur(15px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   animation: fadeInUp 2s ease;
 }
 
@@ -67,63 +116,118 @@ input, select, textarea {
   padding: 10px;
   margin-top: 5px;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 1em;
   box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
 }
 
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #ffb6c1;
+  box-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
+}
+
+/* Button */
 button {
-  background-color: #ffb6c1;
+  background: linear-gradient(135deg, #ffd6e0, #ffb6c1);
   border: none;
   color: #333;
   font-size: 1.1em;
   font-weight: 600;
-  padding: 10px 20px;
-  margin-top: 20px;
-  border-radius: 8px;
+  padding: 12px 35px;
+  margin-top: 25px;
+  border-radius: 50px;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s;
+  box-shadow: 0 4px 12px rgba(255, 182, 193, 0.5);
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  background-color: #ffa0af;
+  background: linear-gradient(135deg, #ffb6c1, #ffa0af);
   transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(255, 182, 193, 0.7);
 }
 
+/* Footer */
 footer {
-  margin-top: 40px;
-  font-size: 0.9em;
+  margin-top: 50px;
+  font-size: 0.95em;
   color: #444;
   background: rgba(255, 255, 255, 0.75);
-  padding: 10px;
-  border-radius: 10px;
+  padding: 12px 25px;
+  border-radius: 15px;
   display: inline-block;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   animation: fadeIn 2s ease;
 }
 
-.hidden {
-  display: none;
+/* ===== FLOATING ELEMENTS ===== */
+.heart {
+  position: fixed;
+  bottom: 0;
+  left: calc(10% + 80% * var(--x));
+  font-size: 22px;
+  color: #ffb6c1;
+  opacity: 0.8;
+  animation: floatHearts 10s linear infinite;
+  animation-delay: calc(-10s * var(--x));
+  z-index: 0;
+}
+
+.sparkle {
+  position: fixed;
+  bottom: -20px;
+  left: calc(10% + 80% * var(--x));
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #ffe4ec 0%, #ffb6c1 40%, transparent 100%);
+  border-radius: 50%;
+  opacity: 0;
+  animation: sparkleUp 10s linear infinite;
+  animation-delay: var(--d);
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(1px);
+}
+
+/* Music Button */
+.music-control {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1000;
+}
+
+.music-control button {
+  background: rgba(255, 255, 255, 0.85);
+  border: 2px solid #ffb6c1;
+  color: #333;
+  font-size: 1em;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.music-control button:hover {
+  background: #ffb6c1;
+  color: white;
+  transform: scale(1.05);
 }
 
 /* ===== ANIMATIONS ===== */
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes fadeInOverlay {
-  from { opacity: 0; }
-  to { opacity: 0.7; }
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+@keyframes fadeInUp { from {opacity: 0; transform: translateY(30px);} to {opacity: 1; transform: translateY(0);} }
+@keyframes slideDown { from {opacity: 0; transform: translateY(-20px);} to {opacity: 1; transform: translateY(0);} }
+@keyframes shimmer { 0% {background-position: 0%;} 100% {background-position: 100%;} }
+@keyframes floatHearts { 0% {transform: translateY(100vh) scale(0.5); opacity: 0;} 50% {opacity: 1;} 100% {transform: translateY(-10vh) scale(1.2); opacity: 0;} }
+@keyframes sparkleUp {
+  0% {transform: translateY(100vh) scale(0.5); opacity: 0;}
+  10% {opacity: 1; transform: translateY(90vh) scale(0.8);}
+  50% {opacity: 0.9; transform: translateY(40vh) scale(1.1);}
+  90% {opacity: 0.4; transform: translateY(-10vh) scale(1.3);}
+  100% {opacity: 0; transform: translateY(-20vh) scale(0.8);}
 }
