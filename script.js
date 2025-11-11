@@ -1,6 +1,4 @@
-// ==========================
-// Splash Screen Animation
-// ==========================
+
 window.addEventListener("load", () => {
   const splash = document.getElementById("splash");
   const main = document.getElementById("mainContent");
@@ -8,8 +6,8 @@ window.addEventListener("load", () => {
   setTimeout(() => {
     splash.classList.add("fade-out");
     setTimeout(() => {
-      splash.style.pointerEvents = "none"; // ✅ disables blocking
-      splash.style.display = "none";       // ✅ hides splash
+      splash.style.pointerEvents = "none"; // disables blocking
+      splash.style.display = "none";       // hides splash
       main.classList.remove("hidden");
     }, 1000);
   }, 3500);
@@ -39,8 +37,8 @@ document.getElementById("rsvpForm").addEventListener("submit", async function (e
   const data = new FormData(form);
 
   try {
-    // 🔗 Replace YOURNAME with your actual Worker subdomain
-    const res = await fetch("https://wedding-rsvp-worker.YOURNAME.workers.dev/rsvp", {
+    // ✅ Send RSVP data to Cloudflare Worker (your backend)
+    const res = await fetch("https://wedding-celebration.feedthefives.workers.dev/rsvp", {
       method: "POST",
       body: data,
     });
@@ -48,7 +46,7 @@ document.getElementById("rsvpForm").addEventListener("submit", async function (e
     const json = await res.json();
 
     if (json.success) {
-      // ✅ Show popup confirmation after saving to D1
+      // ✅ Show confirmation popup
       popup.classList.add("show");
       form.reset();
       document.getElementById("partnerDetails").classList.add("hidden");
